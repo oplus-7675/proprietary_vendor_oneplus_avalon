@@ -836,6 +836,7 @@ PRODUCT_COPY_FILES += \
     vendor/oneplus/avalon/proprietary/odm/etc/display/qdcm_calib_data_AA584_P_7_A0001_dsc_cmd_mode_panel.json:$(TARGET_COPY_OUT_ODM)/etc/display/qdcm_calib_data_AA584_P_7_A0001_dsc_cmd_mode_panel.json \
     vendor/oneplus/avalon/proprietary/odm/etc/displaycolorfeaturecfg.xml:$(TARGET_COPY_OUT_ODM)/etc/displaycolorfeaturecfg.xml \
     vendor/oneplus/avalon/proprietary/odm/etc/init/hw/init.oplus.display.rc:$(TARGET_COPY_OUT_ODM)/etc/init/hw/init.oplus.display.rc \
+    vendor/oneplus/avalon/proprietary/odm/etc/init/vendor.oplus.hardware.biometrics.face@1.0-service.rc:$(TARGET_COPY_OUT_ODM)/etc/init/vendor.oplus.hardware.biometrics.face@1.0-service.rc \
     vendor/oneplus/avalon/proprietary/odm/etc/init/vendor.oplus.hardware.cammidasservice-V1-service.rc:$(TARGET_COPY_OUT_ODM)/etc/init/vendor.oplus.hardware.cammidasservice-V1-service.rc \
     vendor/oneplus/avalon/proprietary/odm/etc/init/vendor.oplus.hardware.displaypanelfeature-service.rc:$(TARGET_COPY_OUT_ODM)/etc/init/vendor.oplus.hardware.displaypanelfeature-service.rc \
     vendor/oneplus/avalon/proprietary/odm/etc/lvacfs_params/2mic/LVACFS_Calibration360_2mic.dat:$(TARGET_COPY_OUT_ODM)/etc/lvacfs_params/2mic/LVACFS_Calibration360_2mic.dat \
@@ -940,6 +941,7 @@ PRODUCT_COPY_FILES += \
     vendor/oneplus/avalon/proprietary/odm/firmware/ufs/SKhynix-HN8T274EJKX130.bin:$(TARGET_COPY_OUT_ODM)/firmware/ufs/SKhynix-HN8T274EJKX130.bin \
     vendor/oneplus/avalon/proprietary/odm/firmware/ufs/move_target_ufs_fw_to_oplusreserve1.sh:$(TARGET_COPY_OUT_ODM)/firmware/ufs/move_target_ufs_fw_to_oplusreserve1.sh \
     vendor/oneplus/avalon/proprietary/odm/firmware/ufs/ufs_version_config.xml:$(TARGET_COPY_OUT_ODM)/firmware/ufs/ufs_version_config.xml \
+    vendor/oneplus/avalon/proprietary/odm/init.oplus.face.rc:$(TARGET_COPY_OUT_ODM)/init.oplus.face.rc \
     vendor/oneplus/avalon/proprietary/odm/lib64/camera/awb_parameter_default.bin:$(TARGET_COPY_OUT_ODM)/lib64/camera/awb_parameter_default.bin \
     vendor/oneplus/avalon/proprietary/odm/lib64/camera/awb_parameter_qtech_s5k3p9.bin:$(TARGET_COPY_OUT_ODM)/lib64/camera/awb_parameter_qtech_s5k3p9.bin \
     vendor/oneplus/avalon/proprietary/odm/lib64/camera/awb_parameter_sunny_imx355.bin:$(TARGET_COPY_OUT_ODM)/lib64/camera/awb_parameter_sunny_imx355.bin \
@@ -982,6 +984,16 @@ PRODUCT_COPY_FILES += \
     vendor/oneplus/avalon/proprietary/odm/vendor/firmware/antdtx.b07:$(TARGET_COPY_OUT_ODM)/vendor/firmware/antdtx.b07 \
     vendor/oneplus/avalon/proprietary/odm/vendor/firmware/antdtx.b08:$(TARGET_COPY_OUT_ODM)/vendor/firmware/antdtx.b08 \
     vendor/oneplus/avalon/proprietary/odm/vendor/firmware/antdtx.mdt:$(TARGET_COPY_OUT_ODM)/vendor/firmware/antdtx.mdt \
+    vendor/oneplus/avalon/proprietary/odm/vendor/firmware/uff_face.b00:$(TARGET_COPY_OUT_ODM)/vendor/firmware/uff_face.b00 \
+    vendor/oneplus/avalon/proprietary/odm/vendor/firmware/uff_face.b01:$(TARGET_COPY_OUT_ODM)/vendor/firmware/uff_face.b01 \
+    vendor/oneplus/avalon/proprietary/odm/vendor/firmware/uff_face.b02:$(TARGET_COPY_OUT_ODM)/vendor/firmware/uff_face.b02 \
+    vendor/oneplus/avalon/proprietary/odm/vendor/firmware/uff_face.b03:$(TARGET_COPY_OUT_ODM)/vendor/firmware/uff_face.b03 \
+    vendor/oneplus/avalon/proprietary/odm/vendor/firmware/uff_face.b04:$(TARGET_COPY_OUT_ODM)/vendor/firmware/uff_face.b04 \
+    vendor/oneplus/avalon/proprietary/odm/vendor/firmware/uff_face.b05:$(TARGET_COPY_OUT_ODM)/vendor/firmware/uff_face.b05 \
+    vendor/oneplus/avalon/proprietary/odm/vendor/firmware/uff_face.b06:$(TARGET_COPY_OUT_ODM)/vendor/firmware/uff_face.b06 \
+    vendor/oneplus/avalon/proprietary/odm/vendor/firmware/uff_face.b07:$(TARGET_COPY_OUT_ODM)/vendor/firmware/uff_face.b07 \
+    vendor/oneplus/avalon/proprietary/odm/vendor/firmware/uff_face.b08:$(TARGET_COPY_OUT_ODM)/vendor/firmware/uff_face.b08 \
+    vendor/oneplus/avalon/proprietary/odm/vendor/firmware/uff_face.mdt:$(TARGET_COPY_OUT_ODM)/vendor/firmware/uff_face.mdt \
     vendor/oneplus/avalon/proprietary/odm/vendor/firmware/uff_jv.b00:$(TARGET_COPY_OUT_ODM)/vendor/firmware/uff_jv.b00 \
     vendor/oneplus/avalon/proprietary/odm/vendor/firmware/uff_jv.b01:$(TARGET_COPY_OUT_ODM)/vendor/firmware/uff_jv.b01 \
     vendor/oneplus/avalon/proprietary/odm/vendor/firmware/uff_jv.b02:$(TARGET_COPY_OUT_ODM)/vendor/firmware/uff_jv.b02 \
@@ -1417,6 +1429,7 @@ PRODUCT_PACKAGES += \
     libbacklight-calib \
     libbitmlengine \
     libbitmlenginev2 \
+    libcamera2ndk_vendor \
     libcamerapostproc \
     libcamxcommonutils \
     libcamxexternalformatutils \
@@ -1734,6 +1747,7 @@ PRODUCT_PACKAGES += \
     libsharebuffer_impl \
     libsnpe_loader \
     libstface_fd_api \
+    libstfaceunlockocl_uff \
     libstfd_mobile_api \
     libtensorflowlite_oplus \
     libtfa98xx \
@@ -1781,6 +1795,7 @@ PRODUCT_PACKAGES += \
     manifest_oplus_cammidasservice_aidl.xml \
     manifest_oplus_cwb_aidl.xml \
     manifest_oplus_displaypanelfeature_aidl.xml \
+    manifest_oplus_face.xml \
     manifest_oplus_sendextcamcmd.xml \
     feature_enabler_client \
     vendor.qti.camera.provider-service_64 \
@@ -1790,5 +1805,6 @@ PRODUCT_PACKAGES += \
     ppd \
     qdcmss \
     cwb_utils_aidl \
+    vendor.oplus.hardware.biometrics.face@1.0-service_uff \
     vendor.oplus.hardware.cammidasservice-V1-service \
     vendor.oplus.hardware.displaypanelfeature-service

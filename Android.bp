@@ -7308,6 +7308,25 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libcamera2ndk_vendor",
+    owner: "oneplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libcamera2ndk_vendor.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    check_elf_files: false,
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libcamerapostproc",
     owner: "oneplus",
     strip: {
@@ -16673,6 +16692,31 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libstfaceunlockocl_uff",
+    owner: "oneplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/odm/lib64/libstfaceunlockocl_uff.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libm",
+                "libOpenCL",
+                "libc",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    device_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libstfd_mobile_api",
     owner: "oneplus",
     strip: {
@@ -17444,6 +17488,15 @@ prebuilt_etc_xml {
 }
 
 prebuilt_etc_xml {
+    name: "manifest_oplus_face.xml",
+    owner: "oneplus",
+    src: "proprietary/odm/etc/vintf/manifest/manifest_oplus_face.xml",
+    filename_from_src: true,
+    sub_dir: "vintf/manifest",
+    device_specific: true,
+}
+
+prebuilt_etc_xml {
     name: "manifest_oplus_sendextcamcmd.xml",
     owner: "oneplus",
     src: "proprietary/odm/etc/vintf/manifest/manifest_oplus_sendextcamcmd.xml",
@@ -17690,6 +17743,61 @@ cc_prebuilt_binary {
 }
 
 cc_prebuilt_binary {
+    name: "vendor.oplus.hardware.biometrics.face@1.0-service_uff",
+    owner: "oneplus",
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/odm/bin/hw/vendor.oplus.hardware.biometrics.face@1.0-service_uff",
+            ],
+            shared_libs: [
+                "libbinder",
+                "liblog",
+                "libcutils",
+                "libhardware",
+                "libutils",
+                "libui",
+                "libbase",
+                "libhidlbase",
+                "libcamera2ndk_vendor",
+                "libmediandk",
+                "libnativewindow",
+                "libtinyxml2",
+                "libprocessgroup",
+                "libstfaceunlockocl_uff",
+                "libbinder_ndk",
+                "libdmabufheap",
+                "android.hardware.biometrics.face-V3-ndk",
+                "android.hardware.biometrics.common-V3-ndk",
+                "android.hardware.keymaster-V4-ndk",
+                "libQSEEComAPI",
+                "libion",
+                "vendor.oplus.hardware.performance-V1-ndk",
+                "vendor.oplus.hardware.osense.client-V1-ndk",
+                "libosenseaidlhalclient",
+                "liboplus-uah-client",
+                "libosensenativeproxy_client",
+                "libolc_vnd",
+                "libsensorndkbridge",
+                "vendor.oplus.hardware.commondcs-V1-ndk",
+                "android.frameworks.stats-V1-ndk",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    strip: {
+        none: true,
+    },
+    prefer: true,
+    relative_install_path: "hw",
+    device_specific: true,
+}
+
+cc_prebuilt_binary {
     name: "vendor.oplus.hardware.cammidasservice-V1-service",
     owner: "oneplus",
     target: {
@@ -17760,5 +17868,11 @@ cc_prebuilt_binary {
     },
     prefer: true,
     relative_install_path: "hw",
+    device_specific: true,
+}
+
+cc_library_shared {
+    name: "libstfaceunlockocl",
+    compile_multilib: "64",
     device_specific: true,
 }
