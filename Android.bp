@@ -17870,9 +17870,3 @@ cc_prebuilt_binary {
     relative_install_path: "hw",
     device_specific: true,
 }
-
-cc_library_shared {
-    name: "libstfaceunlockocl",
-    compile_multilib: "64",
-    device_specific: true,
-}
